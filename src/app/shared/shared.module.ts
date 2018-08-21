@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SubmittingComponent } from '../models/submitting.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedRoutingModule } from './shared-routing.module';
+import { LoadingComponent } from '../models/loading.component';
 
 @NgModule({
   imports: [
@@ -11,12 +12,14 @@ import { SharedRoutingModule } from './shared-routing.module';
     SharedRoutingModule
   ],
   declarations: [
-    SubmittingComponent
+    SubmittingComponent,
+    LoadingComponent
   ],
   exports: [
     SubmittingComponent,
     ReactiveFormsModule,
-    SharedRoutingModule
+    SharedRoutingModule,
+    LoadingComponent
   ]
 })
 export class SharedModule { }

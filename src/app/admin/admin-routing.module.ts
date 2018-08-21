@@ -25,7 +25,7 @@ const AdminRoutes: Routes = [
               path: 'create', component: CreateCourseComponent
             },
             {
-              path: 'update', component: UpdateCourseComponent
+              path: 'update/:id', component: UpdateCourseComponent
             }
           ]
         }

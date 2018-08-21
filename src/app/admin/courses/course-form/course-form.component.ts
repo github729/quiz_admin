@@ -25,20 +25,25 @@ export class CourseFormComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private router: Router,
     private _courseApi: CourseService,
-    private toastr: ToastsManager,
-    vcr: ViewContainerRef) {
-    this.toastr.setRootViewContainerRef(vcr);
+    private toastr: ToastsManager) {
   }
 
   ngOnInit() {
-    this.courseForm = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      status: ['', Validators.required]
-    });
+    console.log(this.event);
     this.isEdit = !!this.event;
     this.submitBtnText = this.isEdit ? 'Update' : 'Create';
+    this.formEvent = this._setFormEvent();
+    this._buildForm();
   }
+
+  private _buildForm() {
+    this.courseForm = this.fb.group({
+      name: [this.formEvent, Validators.required],
+      description: [this.formEvent, Validators.required],
+      status: [this.formEvent, Validators.required]
+    });
+  }
+  
   private _setFormEvent() {
     if (!this.isEdit) {
       // If creating a new event, create new
