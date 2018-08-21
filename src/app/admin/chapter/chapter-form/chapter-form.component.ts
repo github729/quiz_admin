@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ChapterFormModel, ChapterModel } from '../../../models/chapter.model';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ToastsManager } from 'ng6-toastr';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ChapterService } from '../../../services/chapter.service';
 
@@ -21,14 +21,23 @@ export class ChapterFormComponent implements OnInit {
   submitEventObj: ChapterModel;
   submitEventSub: Subscription;
   error: boolean;
+  courseName : any;
+  courseId : number;
 
   constructor(private fb: FormBuilder,
     private router: Router,
+    private route : ActivatedRoute,
     private _courseApi: ChapterService,
     private toastr: ToastsManager) {
   }
 
   ngOnInit() {
+   this.route.queryParams
+    .subscribe(params => {
+      // Defaults to 0 if no query param provided.
+      this.courseName = params['courseName'];
+      this.courseId = params['courseId'];
+    });
     this.isEdit = !!this.event;
     this.submitBtnText = this.isEdit ? 'Update' : 'Create';
     this.formEvent = this._setFormEvent();
@@ -37,7 +46,6 @@ export class ChapterFormComponent implements OnInit {
 
   private _buildForm() {
     this.chapterForm = this.fb.group({
-      courseId: [this.formEvent.courseId, Validators.required],
       name: [this.formEvent.name, Validators.required],
       description: [this.formEvent.description, Validators.required],
       status: [this.formEvent.status, Validators.required],
@@ -50,12 +58,11 @@ export class ChapterFormComponent implements OnInit {
     if (!this.isEdit) {
       // If creating a new event, create new
       // FormEventModel with default null data
-      return new ChapterFormModel(null, null, null,null,null,null);
+      return new ChapterFormModel(null, null, null,null,null);
     } else {
       // If editing existing event, create new
       // FormEventModel from existing data
       return new ChapterFormModel(
-        this.event.courseId,
         this.event.name,
         this.event.description,
         this.event.total_qns,
@@ -66,12 +73,12 @@ export class ChapterFormComponent implements OnInit {
   }
   private _getSubmitObj() {
     return new ChapterModel(
-      this.chapterForm.get('courseId').value,
       this.chapterForm.get('name').value,
       this.chapterForm.get('description').value,
       this.chapterForm.get('total_qns').value,
       this.chapterForm.get('duration').value,
       this.chapterForm.get('status').value,
+      this.courseId,
       this.event ? this.event.id : null
     );
   }

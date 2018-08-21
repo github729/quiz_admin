@@ -18,10 +18,11 @@
           <label for="name">Course
             <span style="color:red;">*</span>
           </label>
-          <input id="name" type="text" class="form-control" formControlName="courseId">
+          <p>{{courseName}}</p>
+          <!-- <input id="name" type="text" class="form-control" formControlName="courseId">
           <p *ngIf="chapterForm.controls.courseId.hasError('required') &&
              chapterForm.controls.courseId.touched" class="small text-danger formErrors">Course Name is required
-          </p>
+          </p> -->
         </div>
         <!-- Chapter Name -->
         <div class="form-group">

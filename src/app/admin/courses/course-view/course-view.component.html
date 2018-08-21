@@ -1,4 +1,4 @@
-<button routerLink = '/admin/chapter/create'>Create Chapter</button><br><br>
+<button routerLink = '/admin/chapter/create' [queryParams]="{ courseName: course?.name,courseId:course?.id }">Create Chapter</button><br><br>
 <div>
   <p>Course Name : {{course?.name}}</p>
   <p>Course Description : {{course?.description}}</p>
