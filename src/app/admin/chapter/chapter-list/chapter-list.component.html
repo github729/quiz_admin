@@ -25,7 +25,7 @@
                 <a (click)="deleteChapter(chapter.id,i)">
                     <i class="fa fa-trash"></i>
                 </a>
-                <a [routerLink]="['/admin/chapter/update',chapter.id]">
+                <a [routerLink]="['/admin/chapter/update',chapter.id]" [queryParams]="{ courseName: chapter?.course?.name,courseId:chapter?.course?.id }">
                     /
                     <i class="fa fa-pencil"></i>
                 </a>
