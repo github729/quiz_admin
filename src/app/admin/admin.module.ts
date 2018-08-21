@@ -12,6 +12,14 @@ import { CourseFormComponent } from './courses/course-form/course-form.component
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { DataTableModule } from 'angular-6-datatable';
+import { BreadcrumbsModule } from 'ng6-breadcrumbs';
+import { CourseViewComponent } from './courses/course-view/course-view.component';
+import { ChapterComponent } from './chapter/chapter.component';
+import { CreateChapterComponent } from './chapter/create-chapter/create-chapter.component';
+import { UpdateChapterComponent } from './chapter/update-chapter/update-chapter.component';
+import { ChapterViewComponent } from './chapter/chapter-view/chapter-view.component';
+import { ChapterFormComponent } from './chapter/chapter-form/chapter-form.component';
+import { ChapterListComponent } from './chapter/chapter-list/chapter-list.component';
 
 
 @NgModule({
@@ -19,7 +27,7 @@ import { DataTableModule } from 'angular-6-datatable';
     CommonModule,
     AdminRoutingModule,
     SharedModule,
-    DataTableModule
+    DataTableModule,
   ],
   declarations: [
     LayoutComponent,
@@ -29,7 +37,14 @@ import { DataTableModule } from 'angular-6-datatable';
     CreateCourseComponent,
     UpdateCourseComponent,
     CourseFormComponent,
-    CoursesListComponent
+    CoursesListComponent,
+    CourseViewComponent,
+    ChapterComponent,
+    CreateChapterComponent,
+    UpdateChapterComponent,
+    ChapterViewComponent,
+    ChapterFormComponent,
+    ChapterListComponent
   ]
 })
 export class AdminModule { }

@@ -7,6 +7,7 @@ import { BrowserModule }    from '@angular/platform-browser';
 import {ToastModule} from 'ng6-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DataTableModule} from "angular-6-datatable";
+import {BreadcrumbsModule} from "ng6-breadcrumbs";
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +19,8 @@ import {DataTableModule} from "angular-6-datatable";
     SharedModule,
     ToastModule.forRoot(),
     BrowserAnimationsModule,
-    DataTableModule
+    DataTableModule,
+    BreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

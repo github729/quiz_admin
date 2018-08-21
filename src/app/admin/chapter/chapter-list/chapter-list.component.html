@@ -1,12 +1,12 @@
-<button routerLink="/admin/course/create" class="pull-right">Create Course</button>
+
 <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
     <thead>
         <tr>
             <th style="width: 30%">
-                <mfDefaultSorter by="name">Course Name</mfDefaultSorter>
+                <mfDefaultSorter by="name">Chapter Name</mfDefaultSorter>
             </th>
             <th style="width: 50%">
-                <mfDefaultSorter by="description">Course Description</mfDefaultSorter>
+                <mfDefaultSorter by="description">Chapter Description</mfDefaultSorter>
             </th>
             <th style="width: 10%">
                 <mfDefaultSorter by="status">status</mfDefaultSorter>
@@ -17,19 +17,19 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of mf.data;index as i ">
-            <td>{{course.name}}</td>
-            <td>{{course.description}}</td>
-            <td>{{course.status | uppercase}}</td>
+        <tr *ngFor="let chapter of mf.data;index as i ">
+            <td>{{chapter.name}}</td>
+            <td>{{chapter.description}}</td>
+            <td>{{chapter.status | uppercase}}</td>
             <td>
-                <a (click)="deleteCourse(course.id,i)">
+                <a (click)="deleteChapter(chapter.id,i)">
                     <i class="fa fa-trash"></i>
                 </a>
-                <a [routerLink]="['/admin/course/update',course.id]">
+                <a [routerLink]="['/admin/chapter/update',chapter.id]">
                     /
                     <i class="fa fa-pencil"></i>
                 </a>
-                <a [routerLink]="['/admin/course/view',course.id]">
+                <a [routerLink]="['/admin/chapter/view',chapter.id]">
                     /
                     <i class="fa fa-eye"></i>
                 </a>

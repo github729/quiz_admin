@@ -7,7 +7,10 @@ const routes : Routes = [
         path:'',pathMatch:'full',redirectTo:'admin'
     },
     {
-        path:'admin',loadChildren: () => AdminModule
+        path:'admin',loadChildren: () => AdminModule,
+        data: {
+            breadcrumb: 'Home'
+        }
     }
 ];
 
