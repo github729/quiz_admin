@@ -1,4 +1,5 @@
-<table class="table table-striped" [mfData]="courses" #mf="mfDataTable" [mfRowsOnPage]="2">
+<button routerLink="/admin/course/create" class="pull-right">Create Course</button>
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
     <thead>
         <tr>
             <th style="width: 30%">
@@ -16,16 +17,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let course of courses;index as i ">
+        <tr *ngFor="let course of mf.data;index as i ">
             <td>{{course.name}}</td>
             <td>{{course.description}}</td>
             <td>{{course.status | uppercase}}</td>
             <td>
                 <a (click)="deleteCourse(course.id,i)">
                     <i class="fa fa-trash"></i>
-                </a> 
+                </a>
                 <a [routerLink]="['/admin/course/update',course.id]">
-                    /<i class="fa fa-pencil"></i>
+                    /
+                    <i class="fa fa-pencil"></i>
                 </a>
             </td>
         </tr>

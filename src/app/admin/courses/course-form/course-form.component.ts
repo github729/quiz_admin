@@ -29,7 +29,6 @@ export class CourseFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.event);
     this.isEdit = !!this.event;
     this.submitBtnText = this.isEdit ? 'Update' : 'Create';
     this.formEvent = this._setFormEvent();
@@ -38,9 +37,9 @@ export class CourseFormComponent implements OnInit {
 
   private _buildForm() {
     this.courseForm = this.fb.group({
-      name: [this.formEvent, Validators.required],
-      description: [this.formEvent, Validators.required],
-      status: [this.formEvent, Validators.required]
+      name: [this.formEvent.name, Validators.required],
+      description: [this.formEvent.description, Validators.required],
+      status: [this.formEvent.status, Validators.required]
     });
   }
   
@@ -101,7 +100,7 @@ export class CourseFormComponent implements OnInit {
   }
 
   private _handleSubmitError(err) {
-    // this.toastr.error(err.message,'Error');
+    this.toastr.error(err.message,'Error');
     this.submitting = false;
     this.error = true;
   }

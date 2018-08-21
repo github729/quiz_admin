@@ -27,7 +27,7 @@ export class CourseService {
   }
 
   editEvent$(id: number, event: CourseModel): Observable<CourseModel> {
-    return this.http.put<CourseModel>(`${ENV.BASE_API}courses/${id}`, event, this.httpOptions)
+    return this.http.put<CourseModel>(`${ENV.BASE_API}course/${id}`, event, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

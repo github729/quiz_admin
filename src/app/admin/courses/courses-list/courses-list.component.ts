@@ -8,18 +8,20 @@ import { ToastsManager } from 'ng6-toastr';
   styleUrls: ['./courses-list.component.css']
 })
 export class CoursesListComponent implements OnInit {
-  public courses: any;
+  public data: any = [];
+  public rowsOnPage : number = 2;
   constructor(private _courseApi: CourseService,
     private toastr: ToastsManager) {
-    this._courseApi.getCourses$().subscribe(data => {
-      if (data.success) {
-        this.courses = data.courses;
-        console.log(this.courses)
-      } else { }
-    });
+    
   }
 
   ngOnInit() {
+    this._courseApi.getCourses$().subscribe(data => {
+      if (data.success) {
+        this.data = data.courses;
+        console.log(this.data)
+      } else { }
+    });
   }
   deleteCourse(id: number, index) {
     var delmsg = confirm("Are u Sure Want to delete?");
@@ -27,7 +29,7 @@ export class CoursesListComponent implements OnInit {
       let apiEvent = this._courseApi.deleteCourseById$(id)
         .subscribe(data => {
           if (data.success) {
-            this.courses.splice(index, 1);
+            this.data.splice(index, 1);
             this.toastr.success(data.message, 'Success');
           } else {
             this.toastr.error(data.message, 'Invalid');
