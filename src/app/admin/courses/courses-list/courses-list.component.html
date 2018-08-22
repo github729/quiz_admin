@@ -25,12 +25,10 @@
                 <a (click)="deleteCourse(course.id,i)">
                     <i class="fa fa-trash"></i>
                 </a>
-                <a [routerLink]="['/admin/course/update',course.id]">
-                    /
+                /<a [routerLink]="['/admin/course/update',course.id]">
                     <i class="fa fa-pencil"></i>
                 </a>
-                <a [routerLink]="['/admin/course/view',course.id]">
-                    /
+                /<a [routerLink]="['/admin/course/view',course.id]">
                     <i class="fa fa-eye"></i>
                 </a>
             </td>

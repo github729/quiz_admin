@@ -34,9 +34,9 @@ export class ChapterService {
   }
 
   // GET new event
-  getChapters$() {
+  getChapters$(id : number) {
     return this.http
-      .get<any>(`${ENV.BASE_API}chapters`, this.httpOptions)
+      .get<any>(`${ENV.BASE_API}chapters/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );

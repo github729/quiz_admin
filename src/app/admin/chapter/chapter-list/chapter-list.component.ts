@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChapterService } from '../../../services/chapter.service';
 import { ToastsManager } from 'ng6-toastr';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-chapter-list',
@@ -9,17 +10,24 @@ import { ToastsManager } from 'ng6-toastr';
 })
 export class ChapterListComponent implements OnInit {
   public data: any = [];
-  public rowsOnPage : number = 2;
+  private id: any;
+  public length : any;
+  
+  public rowsOnPage: number = 2;
   constructor(private _chapterApi: ChapterService,
-    private toastr: ToastsManager) {
-    
+    private toastr: ToastsManager,
+    private route: ActivatedRoute) {
+
   }
 
   ngOnInit() {
-    this._chapterApi.getChapters$().subscribe(data => {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
+    this._chapterApi.getChapters$(this.id).subscribe(data => {
       if (data.success) {
         this.data = data.chapters;
-        console.log(this.data)
+        this.length = this.data.length;
       } else { }
     });
   }

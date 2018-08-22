@@ -107,7 +107,7 @@ export class ChapterFormComponent implements OnInit {
     // Redirect to event detail
     if (res.success) {
       this.toastr.success(res.message, 'Success');
-      this.router.navigate(['/admin/chapter']);
+      this.router.navigate(['/admin/course/view',this.courseId]);
     }
     else {
       this.toastr.error(res.message, 'Invalid');
