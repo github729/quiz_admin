@@ -20,6 +20,12 @@ import { UpdateChapterComponent } from './chapter/update-chapter/update-chapter.
 import { ChapterViewComponent } from './chapter/chapter-view/chapter-view.component';
 import { ChapterFormComponent } from './chapter/chapter-form/chapter-form.component';
 import { ChapterListComponent } from './chapter/chapter-list/chapter-list.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { CreateQuestionComponent } from './questions/create-question/create-question.component';
+import { UpdateQuestionComponent } from './questions/update-question/update-question.component';
+import { QuestionFormComponent } from './questions/question-form/question-form.component';
+import { QuestionViewComponent } from './questions/question-view/question-view.component';
+import { QuestionsListComponent } from './questions/questions-list/questions-list.component';
 
 
 @NgModule({
@@ -44,7 +50,13 @@ import { ChapterListComponent } from './chapter/chapter-list/chapter-list.compon
     UpdateChapterComponent,
     ChapterViewComponent,
     ChapterFormComponent,
-    ChapterListComponent
+    ChapterListComponent,
+    QuestionsComponent,
+    CreateQuestionComponent,
+    UpdateQuestionComponent,
+    QuestionFormComponent,
+    QuestionViewComponent,
+    QuestionsListComponent
   ]
 })
 export class AdminModule { }

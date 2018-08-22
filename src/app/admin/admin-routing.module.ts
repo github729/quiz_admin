@@ -12,6 +12,11 @@ import { ChapterListComponent } from './chapter/chapter-list/chapter-list.compon
 import { CreateChapterComponent } from './chapter/create-chapter/create-chapter.component';
 import { UpdateChapterComponent } from './chapter/update-chapter/update-chapter.component';
 import { ChapterViewComponent } from './chapter/chapter-view/chapter-view.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { QuestionsListComponent } from './questions/questions-list/questions-list.component';
+import { CreateQuestionComponent } from './questions/create-question/create-question.component';
+import { UpdateQuestionComponent } from './questions/update-question/update-question.component';
+import { QuestionViewComponent } from './questions/question-view/question-view.component';
 
 const AdminRoutes: Routes = [
   {
@@ -52,6 +57,23 @@ const AdminRoutes: Routes = [
             },
             {
               path: 'view/:id', component: ChapterViewComponent
+            }
+          ]
+        },
+        {
+          path: 'question', component: QuestionsComponent,
+          children: [
+            {
+              path: '', component: QuestionsListComponent
+            },
+            {
+              path: 'create', component: CreateQuestionComponent
+            },
+            {
+              path: 'update/:id', component: UpdateQuestionComponent
+            },
+            {
+              path: 'view/:id', component: QuestionViewComponent
             }
           ]
         }
