@@ -20,37 +20,37 @@ export class QuestionService {
   // POST new event
   postEvent$(event) {
     return this.http
-      .post(`${ENV.BASE_API}chapter`, event, this.httpOptions)
+      .post(`${ENV.BASE_API}question`, event, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   editEvent$(id: number, event: QuestionModel): Observable<QuestionModel> {
-    return this.http.put<QuestionModel>(`${ENV.BASE_API}chapter/${id}`, event, this.httpOptions)
+    return this.http.put<QuestionModel>(`${ENV.BASE_API}question/${id}`, event, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
 
   // GET new event
-  getChapters$(id : number) {
+  getQuestions$(id : number) {
     return this.http
-      .get<any>(`${ENV.BASE_API}chapters/${id}`, this.httpOptions)
+      .get<any>(`${ENV.BASE_API}questions/${id}`, this.httpOptions)
       .pipe(
         catchError(this.handleError)
       );
   }
-  deleteChapterById$(id:number) {
+  deleteQuestionById$(id:number) {
     return this.http
-    .delete<any>(`${ENV.BASE_API}chapter/${id}`, this.httpOptions)
+    .delete<any>(`${ENV.BASE_API}question/${id}`, this.httpOptions)
     .pipe(
       catchError(this.handleError)
     );
   }
-  getChapterById$(id:number) {
+  getQuestionById$(id:number) {
     return this.http
-    .get<any>(`${ENV.BASE_API}chapter/${id}`, this.httpOptions)
+    .get<any>(`${ENV.BASE_API}question/${id}`, this.httpOptions)
     .pipe(
       catchError(this.handleError)
     );

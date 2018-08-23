@@ -1,25 +1,35 @@
 class QuestionModel {
     constructor(
-        public name: string,
-        public option1:string,
-        public option2: string,
-        public option3:string,
-        public option4: string,
-        public answers: string,
-        public chapterId?:number,
+        public question: string,
+        public options: OptionsModel,                                                                                
+        public chapterId?: number,
         public id?: number
-    ) {}
+    ) { }
 }
 class QuestionFormModel {
     constructor(
-        public name : string,
-        public option1:string,
-        public option2: string,
-        public option3:string,
-        public option4: string,
-        public answers: string,
-        public chapterId?:number
-    ){}
+        public question: string,
+        public options: OptionsFormModel,
+        public chapterId?: number
+    ) { }
 }
-
-export { QuestionModel,QuestionFormModel}
+class OptionsModel {
+    constructor(
+    public option1: string,
+    public option2: string,
+    public option3: string,
+    public option4: string,
+    public answer: string
+   
+){}
+}
+class OptionsFormModel {
+    constructor(
+        public option1: string,
+        public option2: string,
+        public option3: string,
+        public option4: string,
+        public answer: string
+    ) { }
+}
+export { QuestionModel, QuestionFormModel ,OptionsModel,OptionsFormModel}
