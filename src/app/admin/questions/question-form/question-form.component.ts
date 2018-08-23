@@ -34,6 +34,7 @@ export class QuestionFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.event1)
     this.route.queryParams
       .subscribe(params => {
         // Defaults to 0 if no query param provided.

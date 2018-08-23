@@ -28,10 +28,9 @@ export class UpdateQuestionComponent implements OnInit {
       .subscribe(res => {
         if (res.success) {
           this.loading = false;
-          this.question = res.question;
-          this.options = res.question.options;
-          console.log(this.question)
-          console.log(this.options)
+          console.log(res.question)
+          this.question = res.question.question;
+          this.options = res.question.question_options;
         }
       }, err => {
         this.loading = false;
