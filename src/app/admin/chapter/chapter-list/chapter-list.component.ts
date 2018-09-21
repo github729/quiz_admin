@@ -13,7 +13,7 @@ export class ChapterListComponent implements OnInit {
   private id: any;
   public length : any;
   
-  public rowsOnPage: number = 2;
+  public rowsOnPage: number = 10;
   constructor(private _chapterApi: ChapterService,
     private toastr: ToastsManager,
     private route: ActivatedRoute) {

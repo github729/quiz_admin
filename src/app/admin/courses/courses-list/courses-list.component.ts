@@ -9,7 +9,7 @@ import { ToastsManager } from 'ng6-toastr';
 })
 export class CoursesListComponent implements OnInit {
   public data: any = [];
-  public rowsOnPage : number = 2;
+  public rowsOnPage : number = 10;
   constructor(private _courseApi: CourseService,
     private toastr: ToastsManager) {
     

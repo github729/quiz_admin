@@ -25,7 +25,7 @@
                 <a (click)="deleteQuestion(qns.id,i)">
                     <i class="fa fa-trash"></i>
                 </a>
-                /<a [routerLink]="['/admin/question/update',qns.id]">
+                /<a [routerLink]="['/admin/question/update',qns.id]" [queryParams]="{ chapterName: qns?.chapter?.name,chapterId:qns?.chapter?.id }">
                     <i class="fa fa-pencil"></i>
                 </a>
                 /<a [routerLink]="['/admin/question/view',qns.id]">
