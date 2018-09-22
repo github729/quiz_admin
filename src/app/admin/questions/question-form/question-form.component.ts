@@ -56,7 +56,7 @@ export class QuestionFormComponent implements OnInit {
         option2: [this.formEvent1.option2, Validators.required],
         option3: [this.formEvent1.option3, Validators.required],
         option4: [this.formEvent1.option4, Validators.required],
-        answer: [this.formEvent1.answer, Validators.required],
+        is_correct: [this.formEvent1.is_correct, Validators.required]
       })
     });
   }
@@ -74,7 +74,7 @@ export class QuestionFormComponent implements OnInit {
         this.event1.option2,
         this.event1.option3,
         this.event1.option4,
-        this.event1.answer,
+        this.event1.is_correct
       )
     }
   }
@@ -83,7 +83,7 @@ export class QuestionFormComponent implements OnInit {
     if (!this.isEdit) {
       // If creating a new event, create new
       // FormEventModel with default null data
-      return new QuestionFormModel(null, null);
+      return new QuestionFormModel(null, null,null);
     } else {
       // If editing existing event, create new
       // FormEventModel from existing data
@@ -126,7 +126,7 @@ export class QuestionFormComponent implements OnInit {
     // Redirect to event detail
     if (res.success) {
       this.toastr.success(res.message, 'Success');
-      // this.router.navigate(['/admin/course/view',this.courseId]);
+      this.router.navigate(['/admin/chapter/view',this.chapterId]);
     }
     else {
       this.toastr.error(res.message, 'Invalid');

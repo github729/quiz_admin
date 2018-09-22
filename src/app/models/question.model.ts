@@ -19,7 +19,7 @@ class OptionsModel {
     public option2: string,
     public option3: string,
     public option4: string,
-    public answer: string
+    public is_correct: string
    
 ){}
 }
@@ -29,7 +29,7 @@ class OptionsFormModel {
         public option2: string,
         public option3: string,
         public option4: string,
-        public answer: string
+        public is_correct: string
     ) { }
 }
 export { QuestionModel, QuestionFormModel ,OptionsModel,OptionsFormModel}

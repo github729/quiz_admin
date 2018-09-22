@@ -14,7 +14,7 @@ export class QuestionsListComponent implements OnInit {
   private id: any;
   public length : any;
   
-  public rowsOnPage: number = 2;
+  public rowsOnPage: number = 10;
   constructor(private _qnsApi: QuestionService,
     private toastr: ToastsManager,
     private route: ActivatedRoute) {

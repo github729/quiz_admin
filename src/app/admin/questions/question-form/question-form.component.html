@@ -40,28 +40,28 @@
             <span style="color:red;">*</span>
           </label>
           <div class="form-inline ">
-            <input  type="radio" formControlName="answer" value="1">
-            <input id="name" type="text" class="form-control" formControlName="option1" placeholder="Option-1">
+            <input  type="radio" formControlName="is_correct" value="option1">
+            <input id="name" type="text" class="form-control" formControlName="option1" placeholder="Option-1"/>
             <label *ngIf="questionForm.controls.options.controls.option1.hasError('required') &&
                         questionForm.controls.options.controls.option1.touched" class="small text-danger formErrors">Option 1 is required
             </label>
           </div>
           <div class="form-inline">
-            <input type="radio" formControlName="answer" value="2">
+            <input type="radio" formControlName="is_correct" value="option2">
             <input id="name" type="text" class="form-control" formControlName="option2" placeholder="Option-2">
             <label *ngIf="questionForm.controls.options.controls.option2.hasError('required') &&
                         questionForm.controls.options.controls.option2.touched" class="small text-danger formErrors">Option 2 is required
             </label>
           </div>
           <div class="form-inline">
-            <input type="radio" formControlName="answer" value="3">
+            <input type="radio" formControlName="is_correct" value="option3">
             <input id="name" type="text" class="form-control" formControlName="option3" placeholder="Option-3">
             <label *ngIf="questionForm.controls.options.controls.option3.hasError('required') &&
                         questionForm.controls.options.controls.option3.touched" class="small text-danger formErrors">Option 3 is required
             </label>
           </div>
           <div class="form-inline">
-            <input type="radio" formControlName="answer" value="4">
+            <input type="radio" formControlName="is_correct" value="option4">
             <input id="name" type="text" class="form-control" formControlName="option4" placeholder="Option-4">
             <label *ngIf="questionForm.controls.options.controls.option4.hasError('required') &&
                         questionForm.controls.options.controls.option4.touched" class="small text-danger formErrors">Option 4 is required
