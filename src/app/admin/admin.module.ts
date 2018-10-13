@@ -26,6 +26,12 @@ import { UpdateQuestionComponent } from './questions/update-question/update-ques
 import { QuestionFormComponent } from './questions/question-form/question-form.component';
 import { QuestionViewComponent } from './questions/question-view/question-view.component';
 import { QuestionsListComponent } from './questions/questions-list/questions-list.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { JobsFormComponent } from './jobs/jobs-form/jobs-form.component';
+import { JobsListComponent } from './jobs/jobs-list/jobs-list.component';
+import { CreateJobComponent } from './jobs/create-job/create-job.component';
+import { UpdateJobComponent } from './jobs/update-job/update-job.component';
+import { JobsViewComponent } from './jobs/jobs-view/jobs-view.component';
 
 
 @NgModule({
@@ -56,7 +62,13 @@ import { QuestionsListComponent } from './questions/questions-list/questions-lis
     UpdateQuestionComponent,
     QuestionFormComponent,
     QuestionViewComponent,
-    QuestionsListComponent
+    QuestionsListComponent,
+    JobsComponent,
+    JobsFormComponent,
+    JobsListComponent,
+    CreateJobComponent,
+    UpdateJobComponent,
+    JobsViewComponent
   ]
 })
 export class AdminModule { }

@@ -1,0 +1,44 @@
+<button routerLink="/admin/jobs/create" class="pull-right">Post Job</button>
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+    <thead>
+        <tr>
+            <th style="width: 30%">
+                <mfDefaultSorter by="jtitle">Job Title</mfDefaultSorter>
+            </th>
+            <th style="width: 50%">
+                <mfDefaultSorter by="jdescription">Job Description</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+                <mfDefaultSorter by="company">Company</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+                <mfDefaultSorter by="jexp">Exprience</mfDefaultSorter>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let job of mf.data;index as i ">
+            <td>{{job.jtiltle}}</td>
+            <td>{{job.jdescription}}</td>
+            <td>{{job.jcname | uppercase}}</td>
+            <td>
+                <a (click)="deleteJob(job.id,i)">
+                    <i class="fa fa-trash"></i>
+                </a>
+                /<a [routerLink]="['/admin/jobs/update',job.id]">
+                    <i class="fa fa-pencil"></i>
+                </a>
+                /<a [routerLink]="['/admin/jobs/view',job.id]">
+                    <i class="fa fa-eye"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>

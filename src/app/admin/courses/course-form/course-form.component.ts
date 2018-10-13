@@ -12,6 +12,7 @@ import { ToastsManager } from 'ng6-toastr';
   styleUrls: ['./course-form.component.css']
 })
 export class CourseFormComponent implements OnInit {
+  
   @Input() event: CourseModel;
   courseForm: FormGroup;
   submitBtnText: string;

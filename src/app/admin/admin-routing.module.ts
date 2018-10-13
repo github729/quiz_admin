@@ -17,6 +17,12 @@ import { QuestionsListComponent } from './questions/questions-list/questions-lis
 import { CreateQuestionComponent } from './questions/create-question/create-question.component';
 import { UpdateQuestionComponent } from './questions/update-question/update-question.component';
 import { QuestionViewComponent } from './questions/question-view/question-view.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { JobsListComponent } from './jobs/jobs-list/jobs-list.component';
+import { JobsFormComponent } from './jobs/jobs-form/jobs-form.component';
+import { CreateJobComponent } from './jobs/create-job/create-job.component';
+import { UpdateJobComponent } from './jobs/update-job/update-job.component';
+import { JobsViewComponent } from './jobs/jobs-view/jobs-view.component';
 
 const AdminRoutes: Routes = [
   {
@@ -57,6 +63,23 @@ const AdminRoutes: Routes = [
             },
             {
               path: 'view/:id', component: ChapterViewComponent
+            }
+          ]
+        },
+        {
+          path: 'jobs', component: JobsComponent,
+          children: [
+            {
+              path: '', component: JobsListComponent
+            },
+            {
+              path: 'create', component: CreateJobComponent
+            },
+            {
+              path: 'update/:id', component: UpdateJobComponent
+            },
+            {
+              path: 'view/:id', component: JobsViewComponent
             }
           ]
         },

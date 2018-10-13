@@ -1,0 +1,4 @@
+<app-loading *ngIf="loading"></app-loading>
+<ng-template [ngIf]="utils.isLoaded(loading)">
+  <app-jobs-form [event]="job"></app-jobs-form>
+</ng-template>

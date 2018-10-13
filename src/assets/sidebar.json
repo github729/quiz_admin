@@ -16,5 +16,14 @@
         },
         "routerLink": "/admin/course",
         "icon": "fa fa-fw fa-home"
+    },
+    {
+        "id": 3,
+        "name": {
+            "en": "Jobs",
+            "de": "DE_Jobs"
+        },
+        "routerLink": "/admin/jobs",
+        "icon": "fa fa-fw fa-home"
     }
 ]

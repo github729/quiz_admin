@@ -1,0 +1,156 @@
+<form [formGroup]="jobsForm" (ngSubmit)="saveJobs()">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <b>Jobs Form</b>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <span class="text-muted">
+          <em>
+            <span style="color:red;">*</span> Indicates required field</em>
+        </span>
+      </div>
+      <!-- Job Title -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="jtiltle">Job Title
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jtiltle" type="text" class="form-control" formControlName="jtiltle">
+        </div>
+
+        <!-- Job Post date -->
+        <div class="form-group">
+          <label for="jpostdate">Job Post date
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jpostdate" type="date" class="form-control" formControlName="jpostdate">
+        </div>
+        <!-- Company Name -->
+        <div class="form-group">
+          <label for="jcname">Company Name
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jcname" type="text" class="form-control" formControlName="jcname">
+        </div>
+
+        <!-- Job Location -->
+        <div class="form-group">
+          <label for="jlocation">Job Location
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jlocation" type="text" class="form-control" formControlName="jlocation">
+        </div>
+
+        <!-- Job Role -->
+        <div class="form-group">
+          <label for="name">Job Role
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jrole" type="text" class="form-control" formControlName="jrole">
+        </div>
+
+        <!-- Eligibility -->
+        <div class="form-group">
+          <label for="jeligibility">Eligibility
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jeligibility" type="text" class="form-control" formControlName="jeligibility">
+        </div>
+
+        <!-- Last date for Apply -->
+        <div class="form-group">
+          <label for="jlastdate">Last date for Apply
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jlastdate" type="text" class="form-control" formControlName="jlastdate">
+        </div>
+
+        <!-- Company Site -->
+        <div class="form-group">
+          <label for="cwebsite">Company Site
+            <span style="color:red;">*</span>
+          </label>
+          <input id="cwebsite" type="text" class="form-control" formControlName="cwebsite">
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <!-- Experience -->
+        <div class="form-group">
+          <label for="jexp">Experience
+            <span style="color:red;">*</span>
+          </label>
+          <select id="jexp" class="form-control" formControlName="jexp">
+            <option value=null selected>Select</option>
+            <option>active</option>
+            <option>inactive</option>
+          </select>
+        </div>
+
+        <!-- Company Profile -->
+        <div class="form-group">
+          <label for="jcprofile">Company Profile
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jcprofile" type="text" class="form-control" formControlName="jcprofile">
+        </div>
+
+        <!-- Job Description -->
+        <div class="form-group">
+          <label for="jdescription">Job Description
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jdescription" type="text" class="form-control" formControlName="jdescription">
+        </div>
+
+        <!-- Candiate Profile -->
+        <div class="form-group">
+          <label for="candidateprofile">Candiate Profile
+            <span style="color:red;">*</span>
+          </label>
+          <input id="candidateprofile" type="text" class="form-control" formControlName="candidateprofile">
+        </div>
+
+        <!-- Required Skills -->
+        <div class="form-group">
+          <label for="requiredskills">Required Skills
+            <span style="color:red;">*</span>
+          </label>
+          <input id="requiredskills" type="text" class="form-control" formControlName="requiredskills">
+        </div>
+
+        <!-- Apply Url -->
+        <div class="form-group">
+          <label for="jurl">Apply Url
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jurl" type="text" class="form-control" formControlName="jurl">
+        </div>
+
+        <!-- Company Logo -->
+        <div class="form-group">
+          <label for="jclogo">Company Logo
+            <span style="color:red;">*</span>
+          </label>
+          <input id="jclogo" type="text" class="form-control" formControlName="jclogo">
+        </div>
+
+        <!-- Submit -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [attr.disabled]="jobsForm.invalid || submitting ? true : null" [innerText]="submitBtnText"></button>
+          <!-- <app-submitting *ngIf="submitting"></app-submitting> -->
+          <a *ngIf="!submitting" class="btn btn-link" (click)="resetForm()" tabindex="0">Reset Form</a>
+          <!-- API submission error -->
+          <p *ngIf="error" class="mt-3 alert alert-danger">
+            <strong>Error:</strong> There was a problem submitting the form. Please try again.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
