@@ -14,6 +14,7 @@ class JobsModel {
         public candidateprofile:string,
         public requiredskills:string,
         public jurl:string,
+        public jtype:string,
         public jclogo?: string,
         public id?: number
     ) {}
@@ -34,6 +35,7 @@ class JobsFormModel {
         public candidateprofile:string,
         public requiredskills:string,
         public jurl:string,
+        public jtype:string,
         public jclogo?: string
     ){}
 }

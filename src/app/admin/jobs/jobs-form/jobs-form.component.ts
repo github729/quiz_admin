@@ -52,6 +52,7 @@ export class JobsFormComponent implements OnInit {
       candidateprofile: [this.formEvent.candidateprofile, Validators.required],
       requiredskills: [this.formEvent.requiredskills, Validators.required],
       jurl: [this.formEvent.jurl, Validators.required],
+      jtype: [this.formEvent.jtype, Validators.required],
       jclogo: [this.formEvent.jclogo, Validators.required]
     });
   }
@@ -60,7 +61,7 @@ export class JobsFormComponent implements OnInit {
     if (!this.isEdit) {
       // If creating a new event, create new
       // FormEventModel with default null data
-      return new JobsFormModel(null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+      return new JobsFormModel(null, null,null, null, null, null, null, null, null, null, null, null, null, null, null);
     } else {
       // If editing existing event, create new
       // FormEventModel from existing data
@@ -79,6 +80,7 @@ export class JobsFormComponent implements OnInit {
         this.event.candidateprofile,
         this.event.requiredskills,
         this.event.jurl,
+        this.event.jtype,
         this.event.jclogo
       );
     }
@@ -99,6 +101,7 @@ export class JobsFormComponent implements OnInit {
       this.jobsForm.get('candidateprofile').value,
       this.jobsForm.get('requiredskills').value,
       this.jobsForm.get('jurl').value,
+      this.jobsForm.get('jtype').value,
       this.jobsForm.get('jclogo').value,
       this.event ? this.event.id : null
     );
